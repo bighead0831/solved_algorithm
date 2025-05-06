@@ -5,7 +5,7 @@ const students = [];
 for (let i = 0; i < 5; i++) {
   const [name, heightStr, weightStr] = input[i].split(' ');
   const height = Number(heightStr);
-  const weight = Number(weightStr);
+  const weight = Number(weightStr).toFixed(1); // 몸무게는 소수점 첫째자리까지 보여줌
   students.push({ name, height, weight });
 }
 
