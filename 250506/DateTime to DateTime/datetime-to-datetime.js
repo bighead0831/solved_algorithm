@@ -9,7 +9,7 @@ const [d2, h2, m2] = [A, B, C];
 function elapsed_Time() {
     let eTime = 0;
 
-    if(d1<11 || h1<11|| m1<11) return -1;
+    if(d2<11 || h2<11|| m2<11) return -1;
 
     while(true) {
         if(d1==d2 && h1==h2 && m1==m2) break;
