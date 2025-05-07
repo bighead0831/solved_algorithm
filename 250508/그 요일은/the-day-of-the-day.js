@@ -17,9 +17,10 @@ function how_many_day_of_week(d1, d2, A) {
     let dow = 0; // day of week
     for(let i=0; i<7; i++) if(A === day_of_Week[i]) dow = i;
 
-    let elapsed_day = (d2-d1)-dow;
-
-    return parseInt(elapsed_day/7)+1;  
+    let elapsed_day = d2-d1;
+    if(elapsed_day%7 >= dow)
+        return parseInt(elapsed_day/7)+1;
+    return parseInt(elapsed_day/7);  
 }
 
 console.log(how_many_day_of_week(num_of_days(m1,d1), num_of_days(m2,d2), A));
