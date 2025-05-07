@@ -18,7 +18,7 @@ function getDayofWeek(m1, d1, m2, d2) {
 
     let elapsedDay = curDay-prevDay;
     if(elapsedDay<0) {
-        elapsedDay = 7+elapsedDay;
+        elapsedDay = 7+elapsedDay%7;
     }
     return day_of_week[elapsedDay%7];
 }
