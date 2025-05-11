@@ -17,13 +17,6 @@ function getLCM(a, b) {
     return (a*b)/getGCD(a, b);
 }
 
-/* function getAllGCD(cnt) {
-    if(cnt==n-1) {
-        return numbers[cnt];
-    }
-    return getGCD(numbers[cnt], getAllGCD(cnt+1));
-}*/
-
 function getAllLCM(n) {
     let cnt = n-1;
     let result = numbers[cnt];
