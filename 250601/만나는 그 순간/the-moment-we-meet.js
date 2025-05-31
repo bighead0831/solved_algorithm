@@ -15,8 +15,8 @@ for (let i = 0; i < m; i++) {
 }
 
 // Please Write your code here.
-let arrA = Array(1000).fill(-1000); // A의 위치 배열
-let arrB = Array(1000).fill(-1000); // B의 위치 배열
+let arrA = []; // A의 위치 배열
+let arrB = []; // B의 위치 배열
 
 function movingA(movesA) { // A의 이동 기록
     let cnt = 0;
@@ -25,9 +25,9 @@ function movingA(movesA) { // A의 이동 기록
         for(let j=0; j<movesA[i][1]; j++) {
             cnt++;
             if(movesA[i][0] === 'L') {
-                arrA[cnt] = arrA[cnt-1]-1;
+                arrA.push(arrA[cnt-1]-1);
             } else if(movesA[i][0] === 'R') {
-                arrA[cnt] = arrA[cnt-1]+1;
+                arrA.push(arrA[cnt-1]+1);
             }
         }
     }
@@ -40,9 +40,9 @@ function movingB(movesB) { // B의 이동 기록
         for(let j=0; j<movesB[i][1]; j++) {
             cnt++;
             if(movesB[i][0] === 'L') {
-                arrB[cnt] = arrB[cnt-1]-1;
+                arrB.push(arrB[cnt-1]-1);
             } else if(movesB[i][0] === 'R') {
-                arrB[cnt] = arrB[cnt-1]+1;
+                arrB.push(arrB[cnt-1]+1);
             }
         }
     }
@@ -50,7 +50,10 @@ function movingB(movesB) { // B의 이동 기록
 
 function checkMeeting() { // A와 B가 만나는 순간 반환
     let cnt = 0;
-    for(let i=0; i<1000; i++) {
+    let length = arrB.length;
+    if(arrA.length<arrB.length) length = arrA.length;
+
+    for(let i=0; i<length; i++) {
         if(arrA[i] != -1000 && arrB[i] != -1000) {
             if(arrA[i] === arrB[i]) {
                 cnt = i;
