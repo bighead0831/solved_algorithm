@@ -37,11 +37,12 @@ function getMinRect() {
                 y1 = i;
             }
             if(arr[i][j] === 1) {
-                x2 = j+1;
-                y2 = i+1;
+                if(x2<=j) x2 = j+1;
+                if(y2<=i) y2 = i+1;
             }
         }
     }
+
     if(x1==2000&&y1==2000&&x2==0&&y2==0) return 0;
     return (x2-x1)*(y2-y1); // 넓이 반환
 }
