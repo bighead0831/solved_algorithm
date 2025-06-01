@@ -6,7 +6,7 @@ const penalizedPersons = input.slice(1, m + 1).map(Number);
 
 // Please Write your code here.
 let students = Array(n).fill(0);
-let result = 0;
+let result = -1;
 
 for(let i=0; i<m; i++) {
     students[penalizedPersons[i]-1]++;
