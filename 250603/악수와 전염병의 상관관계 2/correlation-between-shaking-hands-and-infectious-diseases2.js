@@ -16,22 +16,24 @@ developer[p-1][0] = 1; // 최초 p번 개발자 감염
 
 // 악수 실시
 for(let i=0; i<t; i++) {
-    if(developer[shakes[i].person1-1][0] === 1 && developer[shakes[i].person2-1][0] != 1) { // 만일 person1이 감염자, person2가 비감염자일때
-        if(developer[shakes[i].person1-1][1] < k) { // person1이 k번 이상 감염 안 시켰으면
-            developer[shakes[i].person1-1][1] += 1; // person1의 감염횟수 증가
-            developer[shakes[i].person2-1][0] = 1; // person2는 감염
-            developer[shakes[i].person2-1][1] += 1; // person2의 감염횟수 증가
+    const P1 = shakes[i].person1-1;
+    const P2 = shakes[i].person2-1;
+    if(developer[P1][0] === 1 && developer[shakes[i].person2-1][0] != 1) { // 만일 person1이 감염자, person2가 비감염자일때
+        if(developer[P1][1] < k) { // person1이 k번 이상 감염 안 시켰으면
+            developer[P1][1] += 1; // person1의 감염횟수 증가
+            developer[P2][0] = 1; // person2는 감염
+            developer[P2][1] += 1; // person2의 감염횟수 증가
         }
-    } else if(developer[shakes[i].person2-1][0] != 1 && developer[shakes[i].person2-1][0] === 1) { // 만일 person2이 감염자, person1가 비감염자일때
-        if(developer[shakes[i].person2-1][1] < k) { // person2이 k번 이상 감염 안 시켰으면
-            developer[shakes[i].person2-1][1] += 1; // person2의 감염횟수 증가
-            developer[shakes[i].person1-1][0] = 1; // person1는 감염
-            developer[shakes[i].person1-1][1] += 1; // person1의 감염횟수 증가
+    } else if(developer[P1][0] != 1 && developer[P2][0] === 1) { // 만일 person2이 감염자, person1가 비감염자일때
+        if(developer[P2][1] < k) { // person2이 k번 이상 감염 안 시켰으면
+            developer[P2][1] += 1; // person2의 감염횟수 증가
+            developer[P1][0] = 1; // person1는 감염
+            developer[P1][1] += 1; // person1의 감염횟수 증가
         }
-    } else if(developer[shakes[i].person1-1][0] === 1 && developer[shakes[i].person2-1][0] === 1) { // 만일 person1, person2 모두 감염자일때
-        if(developer[shakes[i].person1-1][1] < k && developer[shakes[i].person2-1][1]) { // person1, person2 모두 k번 이상 감염 안 시켰으면
-            developer[shakes[i].person1-1][1] += 1; // person1의 감염횟수 증가
-            developer[shakes[i].person2-1][1] += 1; // person2의 감염횟수 증가
+    } else if(developer[P1][0] === 1 && developer[P2][0] === 1) { // 만일 person1, person2 모두 감염자일때
+        if(developer[P1][1] < k && developer[P2][1]) { // person1, person2 모두 k번 이상 감염 안 시켰으면
+            developer[P1][1] += 1; // person1의 감염횟수 증가
+            developer[P2][1] += 1; // person2의 감염횟수 증가
         }
     }
 }
