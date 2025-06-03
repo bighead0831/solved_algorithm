@@ -49,22 +49,34 @@ for (let i=1; i < posB.length; i++) {
 }
 
 let cnt = 1; // 바뀐 조합 초기화 (최초 선두 조합 포함하여 1로 초기화)
-let curHead = 'A';
+let curHead = '?';
 let same = 0;
-if(posA[0] < posB[0]) curHead = 'B';
+if(posA[0] > posB[0]) {
+    curHead = 'A';
+} else if(posA[0] < posB[0]) {
+    curHead = 'B';
+} else if(posA[0] === posB[0]) {
+    curHead = 'A&B';
+}
 
+//console.log(posA);
+//console.log(posB);
+//console.log(curHead);
 for(let i=1; i<posA.length; i++) {
-    let tmpHead = 'A';
-    if(posA[i] < posB[i]) {
+    let tmpHead = '?';
+    if(posA[i] > posB[i]) {
+        tmpHead = 'A';
+    } else if(posA[i] < posB[i]) {
         tmpHead = 'B';
-    }
-    else if(posA[i] === posB[i]) {
-        curHead = 'A&B';
+    } else if(posA[i] === posB[i]) {
+        tmpHead = 'A&B';
     }
     if(tmpHead != curHead) {
         curHead = tmpHead;
         cnt++;
+    } else {
+        curHead = tmpHead;
     }
+    //console.log(curHead);
 }
-
 console.log(cnt);
