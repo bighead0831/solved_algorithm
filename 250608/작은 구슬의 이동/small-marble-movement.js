@@ -19,10 +19,11 @@ r-=1, c-=1;
 for(let i=0; i<t; i++) {
     c=c+dx[dirNum];
     r=r+dy[dirNum];
-    if(inRange(c,r) === false) {
+    if(!inRange(c,r)) {
         c=c-dx[dirNum];
         r=r-dy[dirNum];
-        dirNum = (dirNum+3)%3;
+        dirNum = dirNum-3;
+        if(dirNum<0) dirNum-=dirNum*2;
     }
 }
 r+=1, c+=1;
