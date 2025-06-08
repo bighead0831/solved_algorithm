@@ -8,7 +8,7 @@ c = Number(c);
 
 // Please Write your code here.
 let dx = [1, 0, 0, -1]; // x by (R, U, D, L)
-let dy = [0, 1, -1, 0]; // y by (R, U, D, L)
+let dy = [0, -1, 1, 0]; // y by (R, U, D, L)
 const mapper = {'R': 0, 'U': 1, 'D': 2, 'L': 3};
 let dirNum = mapper[d];
 
@@ -27,4 +27,5 @@ for(let i=0; i<t; i++) {
     }
 }
 r+=1, c+=1;
+
 console.log(r, c);
