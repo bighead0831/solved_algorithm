@@ -10,8 +10,9 @@ let mapper = {'E': 0, 'S': 1, 'W': 2, 'N': 3};
 
 let x=0, y=0;
 
-let cnt = 0;
-let result = -1;
+let cnt = 0; // 이동시간
+let result = -1; // 최소 시간 저장할 변수
+let min = 0; // 최소 시간임을 알려주는 변수 (1이 되는 순간이 최소 시간)
 
 for(let i=0; i<n; i++) {
     let [dir, time] = moves[i].split(' ');
@@ -21,9 +22,9 @@ for(let i=0; i<n; i++) {
         x += dx[dir];
         y += dy[dir];
         cnt++;
-        if(x===0 && y===0) {
+        if(x===0 && y===0 && min===0) {
             result = cnt;
-            break;
+            min++;
         }
     }
 }
