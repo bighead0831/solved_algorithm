@@ -30,6 +30,8 @@ let curx = startMirror[1];
 function inRange(x,y) { return x>=0 && x<n && y>=0 && y<n; }
 
 while(inRange(curx, cury)) {
+    console.log(cury, curx);
+    cnt++;
     if(mirror[cury][curx] === '\\') {
         if(dir === 'R') { dir = 'D'; } 
         else if(dir === 'L') { dir = 'U'; } 
@@ -45,7 +47,6 @@ while(inRange(curx, cury)) {
         curx += dx[mapper[dir]];
         cury += dy[mapper[dir]];
     }
-    cnt++;
 }
 
 
