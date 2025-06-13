@@ -18,9 +18,9 @@ for(let i=0; i<n; i++) { mirror[i] = arr[i].split(''); }
 let dir = '';
 let startSide = parseInt((startNum-1)/4);
 let startMirror = [0,0];
-if(startSide === 0) { dir = 'D'; startMirror = [0,startNum-1]; } // 윗면에서 아래로 빛 쏨 D
+if(startSide === 0) { dir = 'D'; startMirror = [0,(startNum-1)%n]; } // 윗면에서 아래로 빛 쏨 D
 else if(startSide === 1) { dir = 'L'; startMirror = [(startNum-1)%n, n-1]; } // 우측면에서 좌측으로 빛 쏨 L
-else if(startSide === 2) { dir = 'U'; startMirror = [n-1, n-1-(starNum-1)%n]; } // 아랫면에서 위로 빛 쏨 U
+else if(startSide === 2) { dir = 'U'; startMirror = [n-1, n-1-(startNum-1)%n]; } // 아랫면에서 위로 빛 쏨 U
 else if(startSide === 3) { dir = 'R'; startMirror = [n-1-(startNum-1)%n, 0]} // 좌측면에서 우측으로 빛 쏨 R
 
 let cnt = 0;
