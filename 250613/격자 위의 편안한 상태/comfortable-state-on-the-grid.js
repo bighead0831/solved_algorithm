@@ -25,7 +25,7 @@ function checkPeace(r,c) {
             if(arr[x][y] === 1) cnt++;
         }
     }
-    if(cnt >= 3) {return true;}
+    if(cnt === 3) {return true;}
     else {return false;}
 }
 
