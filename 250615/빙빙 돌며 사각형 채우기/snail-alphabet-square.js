@@ -29,7 +29,13 @@ function fillArr() {
             } else {
                 dir = (dir+1)%4;
                 nr = r + dy[dir], nc = c + dx[dir];
-                if(isEmpty(nr,nc)===false) {break;}
+                if(inRange(nr,nc)) {
+                    if(isEmpty(nr,nc)===false) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
             }
         } else {
             dir = (dir+1)%4;
