@@ -19,7 +19,7 @@ function fillArr() {
     arr[r][c] = engChar[cnt];
 
     let nr=r, nc=c; // next row, column
-    while(true) {
+    while(n*m > 1) {
         nr = r + dy[dir], nc = c + dx[dir];
         if(inRange(nr,nc)) {
             if(isEmpty(nr,nc)) {
