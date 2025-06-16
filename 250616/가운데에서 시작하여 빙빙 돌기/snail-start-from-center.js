@@ -18,8 +18,10 @@ let cnt = 1;
 arr[r][c]=cnt;
 
 let dir = 0; // 방향은 R로 시작
-r += dr[dir], c += dc[dir], cnt++;
-arr[r][c]=cnt;
+if(n>1) {
+    r += dr[dir], c += dc[dir], cnt++;
+    arr[r][c]=cnt;
+}
 
 function inRange(r,c) {return r>=0 && r<n && c>=0 && c<n;}
 function isEmpty(r,c) {return arr[r][c]===0;}
