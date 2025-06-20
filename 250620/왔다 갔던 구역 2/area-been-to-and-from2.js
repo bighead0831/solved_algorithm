@@ -11,23 +11,27 @@ for(let i=0; i<n; i++) {
 }
 
 // Please Write your code here.
-let arr = Array(1000).fill(0);
-let cp = 500; // current point
+let arr = Array(2001).fill(0);
+let cp = 1000; // current point
+
+let min = 2000;
+let max = 0;
 
 for(let i=0; i<n; i++) {
     for(let j=0; j<Number(moves[i]); j++) {
-        if(dir[i] === 'R') {
+        if(dir[i] === 'R') { // 오른쪽 갈때는 칠하고 옮기기. 예를들어 0->2면 0, 1이 칠해짐
+            arr[cp] += 1;
             cp += 1;
-        } else {
+        } else { // 왼쪽 갈때는 옮기고 칠하기. 예를들어 2->0면 1, 0이 칠해짐 
             cp -= 1;
+            arr[cp] += 1;
         }
-        arr[cp] += 1;
     }
 }
 
 let cnt = 0;
-for(let i=0; i<1000; i++) {
+for(let i=0; i<2001; i++) {
     if(arr[i] >= 2) cnt++;
 }
 
-console.log(cnt);
+console.log(+ cnt);
