@@ -7,6 +7,10 @@ const a = input[0].split('').map(Number);
 let getChange = false;
 let i=0;
 while(getChange = true) {
+    if(a.length === 1) {
+        a[i] = Math.abs(a[i]-1);
+        break;
+    }
     if(a[i] === 0) {
         getChange = true;
         a[i] = 1;
