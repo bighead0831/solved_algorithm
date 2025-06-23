@@ -7,17 +7,16 @@ const a = input[0].split('').map(Number);
 let getChange = false;
 let i=0;
 while(getChange = true) {
-    if(a.length === 1) {
-        a[i] = Math.abs(a[i]-1);
-        break;
-    }
     if(a[i] === 0) {
         getChange = true;
         a[i] = 1;
         break;
     } else {
         i++;
-        if(i===a.length) break;
+        if(i===a.length) { // 끝까지 이르렀는데 0이 없으면 가장 끝에 있는 것을 바꿔주기
+            a[i-1] = Math.abs(a[i-1]-1);
+            break;
+        }
     }
 }
 
