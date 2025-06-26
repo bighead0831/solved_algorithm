@@ -11,7 +11,7 @@ let people = 0;
 for(let i=0; i<arr.length; i++) people += arr[i];
 const People = people; // 전체 인원
 
-let minDist = 10000000000000000;
+let minDist = People*n;
 for(let i=0; i<arr.length; i++) {
     let dist = 0;
     people = People;
