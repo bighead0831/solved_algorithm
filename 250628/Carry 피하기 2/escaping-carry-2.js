@@ -14,7 +14,7 @@ for(let i=0; i<n; i++) { // nums 배열에 n개의 수 저장
         nums[i][j] = Number(tmpnum[j-(MAX-tmpnum.length)]);
 }
 
-let maxSum = 0;
+let maxSum = -1;
 for(let i=0; i<n-2; i++) {
     for(let j=i+1; j<n-1; j++) {
         for(let k=j+1; k<n; k++) {
