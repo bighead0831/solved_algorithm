@@ -84,4 +84,4 @@ for(let i=0; i<19; i++) {
 }
 
 console.log(winColor);
-console.log(resR+1, resC+1);
+if(winColor != 0) console.log(resR+1, resC+1);
