@@ -43,14 +43,28 @@ function chkColumn(r,c, color) {
     }
 }
 
-function chkDiagonal(r,c, color) {
+function chkDiagonal_R(r,c, color) {
     if(inRange(r, c)) {
         if(arr[r][c] != color) {
             if(cnt === 5) {[resR, resC] = [r-3, c-3]; winColor = color;}
             else {cnt = 0;}
         } else {
             cnt++;
-            return chkDiagonal(r+1, c+1, color);
+            return chkDiagonal_R(r+1, c+1, color);
+        }
+    } else {
+        cnt = 0;
+    }
+}
+
+function chkDiagonal_L(r,c, color) {
+    if(inRange(r, c)) {
+        if(arr[r][c] != color) {
+            if(cnt === 5) {[resR, resC] = [r-3, c+3]; winColor = color;}
+            else {cnt = 0;}
+        } else {
+            cnt++;
+            return chkDiagonal_L(r+1, c-1, color);
         }
     } else {
         cnt = 0;
@@ -63,7 +77,8 @@ for(let i=0; i<19; i++) {
         if(arr[i][j] != 0) {
             chkRow(i, j, arr[i][j]);
             chkColumn(i, j, arr[i][j]);
-            chkDiagonal(i, j, arr[i][j]);
+            chkDiagonal_R(i, j, arr[i][j]);
+            chkDiagonal_L(i, j, arr[i][j]);
         }
     }
 }
