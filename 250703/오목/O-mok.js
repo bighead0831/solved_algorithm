@@ -25,7 +25,8 @@ function chkRow(r,c, color) {
             return chkRow(r+1, c, color);
         }
     } else {
-        cnt = 0;
+        if(cnt === 5) {[resR, resC] = [r-3, c]; winColor = color;}
+        else cnt = 0;
     }
 }
 
@@ -39,7 +40,8 @@ function chkColumn(r,c, color) {
             return chkColumn(r, c+1, color);
         }
     } else {
-        cnt = 0;
+        if(cnt === 5) {[resR, resC] = [r, c-3]; winColor = color;}
+        else cnt = 0;
     }
 }
 
@@ -53,7 +55,8 @@ function chkDiagonal_R(r,c, color) {
             return chkDiagonal_R(r+1, c+1, color);
         }
     } else {
-        cnt = 0;
+        if(cnt === 5) {[resR, resC] = [r-3, c-3]; winColor = color;}
+        else cnt = 0;
     }
 }
 
@@ -67,7 +70,8 @@ function chkDiagonal_L(r,c, color) {
             return chkDiagonal_L(r+1, c-1, color);
         }
     } else {
-        cnt = 0;
+        if(cnt === 5) {[resR, resC] = [r-3, c+3]; winColor = color;}
+        else cnt = 0;
     }
 }
 
@@ -82,6 +86,5 @@ for(let i=0; i<19; i++) {
         }
     }
 }
-
 console.log(winColor);
 if(winColor != 0) console.log(resR+1, resC+1);
