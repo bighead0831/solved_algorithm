@@ -18,11 +18,11 @@ for(let i=0; i<n; i++) { // Time Complexity = O(n)
 }
 
 let result = 0;
-if(finalNum<=(k+1)) {
+if(finalNum-1<=k) {
     for(let i=0; i<finalNum; i++) 
         result += arr[i];
 } else {
-    for(let i=0; i<finalNum-(k+1); i++) { // Time Complexity = O(n)
+    for(let i=0; i<finalNum-k; i++) { // Time Complexity = O(n)
         let sum = 0
         for(let j=i; j<i+(k+1); j++) 
             sum += arr[j];
