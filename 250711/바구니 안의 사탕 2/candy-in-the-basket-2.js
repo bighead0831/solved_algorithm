@@ -13,12 +13,12 @@ for (let i = 0; i < n; i++) {
 const MAXPOS = 100;
 let arr = new Array(MAXPOS).fill(0);
 
-for(let i=0; i<n; i++) arr[baskets[i][1]] = baskets[i][0];
+for(let i=0; i<n; i++) arr[baskets[i][1]] += baskets[i][0];
 
 let result = 0;
-for(let i=k; i<MAXPOS-k; i++) {
+for(let i=0; i<MAXPOS-2*k; i++) {
     let sum = 0
-    for(let j=-k; j<=k; j++) {
+    for(let j=0; j<=2*k; j++) {
         sum += arr[i+j];
     }
     result = Math.max(result, sum);
