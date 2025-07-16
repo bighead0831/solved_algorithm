@@ -10,9 +10,9 @@ let cnt = 0;
 for(let i=1; i<=n; i++) {
     for(let j=1; j<=n; j++) {
         for(let k=1; k<=n; k++) {
-            if((Math.abs(i-a)<=2 || Math.abs(i-n-a)<=2) && (Math.abs(j-b)<=2 || Math.abs(j-n-b)<=2) && (Math.abs(k-c)<=2 || Math.abs(k-n-c)<=2)) {
+            if((Math.abs(i-a)<=2 || Math.abs(i+n-a)<=2 || Math.abs(i-n-a)<=2) && (Math.abs(j-b)<=2 || Math.abs(j+n-b)<=2 || Math.abs(j-n-b)<=2) && (Math.abs(k-c)<=2 || Math.abs(k+n-c)<=2 || Math.abs(k-n-c)<=2)) {
                 cnt++;
-            } else if((Math.abs(i-a2)<=2 || Math.abs(i-n-a2)<=2) && (Math.abs(j-b2)<=2 || Math.abs(j-n-b2)<=2) && (Math.abs(k-c2)<=2 || Math.abs(k-n-c2)<=2)) {
+            } else if((Math.abs(i-a2)<=2 || Math.abs(i+n-a2)<=2 || Math.abs(i-n-a2)<=2) && (Math.abs(j-b2)<=2 || Math.abs(j+n-b2)<=2 || Math.abs(j-n-b2)<=2) && (Math.abs(k-c2)<=2 || Math.abs(k+n-c2)<=2 || Math.abs(k-n-c2)<=2)) {
                 cnt++;
             }
         }
