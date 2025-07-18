@@ -25,6 +25,14 @@ function jump(y, x, cnt = 0) {
             for(let j=x+1; j<C; j++) {
                 if(grid[i][j] != grid[y][x]) {
                     //process.stdout.write('(1)'+y+'|'+x+' '+i+' '+j+' '+grid[i][j]+' '+cnt+'   ');
+                    
+                    // cnt++  
+                    // jump(i, j, cnt);
+                    /*  위 코드때문에 계속 에러... 
+                        cnt++; jump(i,j,cnt);로 푸는것하고, 
+                        그냥 jump(i,j,cnt+1);로 푸는 것하고 
+                        뭔 차이가 있길래 결과가 다르게 나오는지 미스테리다
+                    */
                     jump(i, j, cnt+1);
                 }
             }
