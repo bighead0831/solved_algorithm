@@ -16,17 +16,16 @@ let [y, x] = [0, 0]; // 첫 시작점 (0,0) 초기화
 
 function jump(y, x, cnt = 0) {
     // process.stdout.write('(2)'+y+' '+x+' '+grid[y][x]+' '+cnt+'   ');
-    if(cnt === 3) {
+    if(cnt===3 && y===R-1 && x===C-1 ) {
         result++;
-        // process.stdout.write('\t[result]'+result+'\n\n');
+        //process.stdout.write('\t[result]'+result+'\n\n');
     } 
     else {
         for(let i=y+1; i<R; i++) {
             for(let j=x+1; j<C; j++) {
                 if(grid[i][j] != grid[y][x]) {
-                    //process.stdout.write('(1)'+y+'|'+x+' '+i+' '+j+' '+' '+cnt+'   ');
-                    cnt++;
-                    jump(i, j, cnt);
+                    //process.stdout.write('(1)'+y+'|'+x+' '+i+' '+j+' '+grid[i][j]+' '+cnt+'   ');
+                    jump(i, j, cnt+1);
                 }
             }
         }
