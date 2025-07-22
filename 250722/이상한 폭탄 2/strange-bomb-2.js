@@ -7,7 +7,8 @@ let boom = -1;
 for(let i=0; i<n; i++) {
     for(let j=0; j<n; j++) {
         if(i===j) continue;
-        if(nums[i] === nums[j] && Math.abs(i-j)<=k) boom = nums[i]; 
+        if(nums[i] === nums[j] && Math.abs(i-j)<=k) 
+            boom = Math.max(boom, nums[i]); 
     }
 }
 
