@@ -16,7 +16,6 @@ for (let i = 0; i < n; i++) {
 
 let maxStudent = 0;
 for(let i=0; i<n; i++) {
-    let student = 0;
     let useMoney = pArr[i]/2 + sArr[i]; // i번 학생에게 반값쿠폰 먹이기
 
     let tmpPSarr = []; // i번 학생을 제외한 다른 학생들의 선물+배송비 배열
@@ -24,17 +23,15 @@ for(let i=0; i<n; i++) {
         if(k===i) continue;
         tmpPSarr.push(psArr[k]);
     }
-
     tmpPSarr.sort((a,b) => a-b); // 작은 순서대로 정렬 (이유: 작은 것부터 확인하면 선물 가능한 학생 최대 명수 쉽게 도출 가능)
 
+    let student = 1;
     for(let j=0; j<n; j++) {
-        if(j===i) continue; // i번 학생을 제외한 모든 학생
+        useMoney += tmpPSarr[j]; // 예산 적게 드는 학생부터 예산 사용
+        student++; // 선물 준 학생 수 증가
 
-        useMoney = tmpPSarr[j];
-        student++;
-
-        if(b-useMoney < 0) { student--; break;} 
-        else if (b === useMoney) break;
+        if(b < useMoney) { student--; break;} // 선물 주고 났더니 예산초과이면 학생수 1명 줄이고 break
+        else if (b === useMoney) break; // 예산에 딱 맞으면 그대로 break
     }
 
     maxStudent = Math.max(maxStudent, student);
