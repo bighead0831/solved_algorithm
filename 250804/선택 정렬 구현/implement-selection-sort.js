@@ -3,18 +3,18 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
 const arr = input[1].split(' ').map(Number);
 
-
-const result = [];
-for(let i=0; i<n; i++) {
-    let min = 100;
-    for(let j=0; j<n; j++) {
-        let good = true;
-        for(let k=0; k<i; k++) { // 이미 결과에 집어 넣은 작은 수는 제외
-            if(result[k] === arr[j]) good = false;
-        }
-        if(good) min = Math.min(min, arr[j]); // 가장 작은 순으로 결과에 집어넣기
+function selection_sort(arr) {
+    let len = arr.length;
+    for(let i=0; i<len-1; i++) {
+        let min = i
+        for(let j=i+1; j<len; j++)
+            if (arr[j] < arr[min])
+                min = j;
+    let tmp = arr[i];
+    arr[i] = arr[min];
+    arr[min] = tmp;
     }
-    result.push(min);
+    return arr;
 }
 
-console.log(result.join(' '));
+console.log(selection_sort(arr).join(' '));
