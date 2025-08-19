@@ -11,4 +11,4 @@ for(let i=1; i<=n; i++) {
     b = Math.min(b, tb/(2**i));
 }
 
-console.log(a.toFixed(0));
+console.log(Math.ceil(a));
