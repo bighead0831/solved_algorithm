@@ -6,6 +6,7 @@ public class Main {
         b=c;
         c=tmpa
         System.out.println(a);
-        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
     }
 }
