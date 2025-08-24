@@ -21,7 +21,7 @@ function isPossible(a) {
     return true;
 }
 
-let maxMin = n; // 거쳐간 지점에 적혀있는 수들 중 최댓값이 최소일 때 저장할 변수
+let maxMin = 100; // 거쳐간 지점에 적혀있는 수들 중 최댓값이 최소일 때 저장할 변수
 for(let a=1; a<=n; a++) { // maxMin에 들어갈 변수 1~n까지 가능한지 검사
     if(isPossible(a)) { // k 이내로 점프하여 n번에 도달할 경우
         maxMin = Math.min(maxMin, a); // maxMin에 최솟값 저장
