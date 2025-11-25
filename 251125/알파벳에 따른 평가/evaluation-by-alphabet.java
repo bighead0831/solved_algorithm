@@ -6,13 +6,13 @@ public class Main {
         char c = sc.newChar();
         if(c=='S')
             System.out.println("Superior");
-        else if(c=='A');
+        else if(c=='A')
             System.out.println("Excellent");
-        else if(c=='B');
+        else if(c=='B')
             System.out.println("Good");
-        else if(c=='C');
+        else if(c=='C')
             System.out.println("Usually");
-        else if(c=='D');
+        else if(c=='D')
             System.out.println("Effort");
         else
             System.out.println("Failure");
