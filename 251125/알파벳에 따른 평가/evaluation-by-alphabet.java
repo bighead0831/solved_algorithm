@@ -5,16 +5,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         char c = sc.newChar();
         if(c=='S')
-            System.out.println("Superior"):
+            System.out.println("Superior");
         else if(c=='A');
-            System.out.println("Excellent"):
+            System.out.println("Excellent");
         else if(c=='B');
-            System.out.println("Good"):
+            System.out.println("Good");
         else if(c=='C');
-            System.out.println("Usually"):
+            System.out.println("Usually");
         else if(c=='D');
-            System.out.println("Effort"):
+            System.out.println("Effort");
         else
-            System.out.println("Failure"):
+            System.out.println("Failure");
     }
 }
