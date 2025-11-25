@@ -8,12 +8,12 @@ public class Main {
 
         if(a<b)
             System.out.print("1 ");
-        else if(b>=a)
+        else
             System.out.print("0 ");
         
         if(a==b)
             System.out.print("1");
-        else if(b>a)
+        else
             System.out.print("0");
     }
 }
