@@ -6,6 +6,6 @@ public class Main {
 
         int a = sc.nextInt();
 
-        Sysetm.out.println(a%3==0||a%5==0?1:0);
+        System.out.println(a%3==0||a%5==0?1:0);
     }
 }
