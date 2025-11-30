@@ -13,6 +13,8 @@ public class Main {
             for(int i=b; i>=a; i--) {
                 System.out.print(i+" ");
             }
+        } else {
+            System.out.print(a);
         }
     }
 }
