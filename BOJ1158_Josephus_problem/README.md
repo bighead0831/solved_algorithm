@@ -71,5 +71,54 @@ public class Main {
 
 ---
 
+## 💻 구현 코드 (Improved Logic)
+```java
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        // try-with-resources로 자원 관리
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st.nextToken());
+            int k = Integer.parseInt(st.nextToken());
+
+            String result = getJosephusSequence(n, k);
+            System.out.println(result);
+        }
+    }
+
+    private static String getJosephusSequence(int n, int k) {
+        Queue<Integer> people = new LinkedList<>();
+        for (int i = 1; i <= n; i++) people.add(i);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("<");
+
+        while (!people.isEmpty()) {
+            // K-1번 뒤로 보내기
+            for (int i = 0; i < k - 1; i++) {
+                people.add(people.poll());
+            }
+
+            // K번째 사람 제거 및 결과 추가
+            sb.append(people.poll());
+
+            // 쉼표 처리 (마지막 요소가 아닐 때만)
+            if (!people.isEmpty()) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append(">");
+        return sb.toString();
+    }
+}
+```
+
+---
+
 ## 🛠️ 실리콘밸리 꿈을 향한 기록
-군 복무 중에도 알고리즘 풀이와 함께 **성능 최적화(I/O)**와 **코드 가독성**을 고민한 흔적을 남긴다. 오늘의 작은 개선이 나중에 대규모 트래픽을 처리하는 창업 아이템의 기초가 될 것이라 믿는다.
+알고리즘 풀이와 함께 **성능 최적화(I/O)**와 **코드 가독성**을 고민한 흔적을 남긴다.
+오늘의 작은 개선이 나중에 대규모 트래픽을 처리하는 창업 아이템의 기초가 될 것이라 믿는다.
