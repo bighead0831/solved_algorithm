@@ -6,7 +6,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         int num=1;
-        for(int i=1; i<=10; i++) {
+        for(int i=2; i<=10; i++) {
             num*=i;
             if(num>n) {
                 System.out.println(i);
