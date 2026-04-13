@@ -11,6 +11,7 @@ public class Main {
             else if(n<25) sb.append("Higher\n");
             else sb.append("Good\n");
             input = br.readLine();
+            if(input == null) break;
         }
         System.out.println(sb.toString());
     }
