@@ -14,8 +14,7 @@ public class Main {
             }
             num = Integer.parseInt(br.readLine());
         }
-        double avg = (double)sum/cnt;
-        System.out.printf("%.2f", avg);
+        System.out.printf("%.2f", (double)sum/cnt);
 
     }
 }
