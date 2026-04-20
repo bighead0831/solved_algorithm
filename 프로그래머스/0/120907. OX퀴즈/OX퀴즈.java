@@ -8,15 +8,8 @@ class Solution {
             int a = Integer.parseInt(tmp[0]);
             int b = Integer.parseInt(tmp[2]);
             int r = Integer.parseInt(tmp[4]);
-            if(tmp[1].equals("+")) {
-                answer[i] = a+b==r?"O":"X";
-            } else if(tmp[1].equals("-")) {
-                answer[i] = a-b==r?"O":"X";
-            } else if(tmp[1].equals("*")) {
-                answer[i] = a*b==r?"O":"X";
-            } else if(tmp[1].equals("/")) {
-                answer[i] = a/b==r?"O":"X";
-            }
+            
+            answer[i] = tmp[1].equals("+")?(a+b==r?"O":"X"):(a-b==r?"O":"X");
         }
         return answer;
     }
