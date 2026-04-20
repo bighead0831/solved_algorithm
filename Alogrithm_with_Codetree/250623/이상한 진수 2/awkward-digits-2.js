@@ -1,0 +1,28 @@
+const fs = require("fs");
+const input = fs.readFileSync(0).toString().trim().split('\n');
+
+const a = input[0].split('').map(Number);
+
+// Please Write your code here.
+let getChange = false;
+let i=0;
+while(getChange = true) {
+    if(a[i] === 0) {
+        getChange = true;
+        a[i] = 1;
+        break;
+    } else {
+        i++;
+        if(i===a.length) { // 끝까지 이르렀는데 0이 없으면 가장 끝에 있는 것을 바꿔주기
+            a[i-1] = Math.abs(a[i-1]-1);
+            break;
+        }
+    }
+}
+
+let sum = 0;
+for(let j=0; j<a.length; j++) {
+    sum += a[j]*(2**((a.length-1)-j));
+}
+
+console.log(sum);
